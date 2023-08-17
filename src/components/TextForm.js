@@ -20,6 +20,10 @@ export default function TextForm(props){
         let newText="";
         setText(newText);
     }
+    const handleInv =()=>{
+        var newText= text.split('').reverse().join('');
+        setText(newText);
+    }
     const[text,setText] = useState("Enter your value here");
     return(
         <>
@@ -31,6 +35,7 @@ export default function TextForm(props){
             <button className="btn btn-primary" onClick={handleClick} >Convert to Uppercase</button> 
             <button className="btn btn-primary mx-3" onClick={handleLo}>Convert to LowerCase</button>
             <button className="btn btn-primary mx-2" onClick={handleClr}>Clear</button>
+            <button className="btn btn-primary" onClick={handleInv}>Inverse</button>
             </div>
 
             <div className="container mt-3">

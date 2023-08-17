@@ -24,6 +24,10 @@ export default function TextForm(props){
         var newText= text.split('').reverse().join('');
         setText(newText);
     }
+    const handleWel =()=>{
+        var newText= " Welcome "+text ;
+        setText(newText);
+    }
     const[text,setText] = useState("Enter your value here");
     return(
         <>
@@ -32,10 +36,12 @@ export default function TextForm(props){
             <div className="mb-3">
                 <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
             </div>
-            <button className="btn btn-primary" onClick={handleClick} >Convert to Uppercase</button> 
+            <button className="btn btn-primary"  onClick={handleWel} >Welcome</button>
+            <button className="btn btn-primary mx-2" onClick={handleClick} >Convert to Uppercase</button> 
             <button className="btn btn-primary mx-3" onClick={handleLo}>Convert to LowerCase</button>
             <button className="btn btn-primary mx-2" onClick={handleClr}>Clear</button>
-            <button className="btn btn-primary" onClick={handleInv}>Inverse</button>
+            <button className="btn btn-primary mx-2" onClick={handleInv}>Inverse</button>
+            
             </div>
 
             <div className="container mt-3">

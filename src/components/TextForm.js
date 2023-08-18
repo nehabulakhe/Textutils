@@ -3,40 +3,46 @@ import React,{useState} from 'react';
 
 export default function TextForm(props){
     const handleClick = ()=>{
-        console.log("Uppercase clicked " + text);
+    
         let newText=text.toUpperCase();
         setText(newText);
-        
+        props.showAlert("Convert to Uppercase ","success");
     }
     const handleOnChange = (event)=>{
-        console.log("change");
         setText(event.target.value);
     }
     const handleLo  = ()=>{
         let newText=text.toLowerCase();
         setText(newText);
+        props.showAlert("Convert to Lowercase ","success");
     }
     const handleClr  = ()=>{
         let newText="";
         setText(newText);
+        props.showAlert("Clear Text ","success");
     }
     const handleInv =()=>{
         var newText= text.split('').reverse().join('');
         setText(newText);
+        props.showAlert("Reverse the Text ","success");
     }
     const handleWel =()=>{
         var newText= " Welcome "+text ;
         setText(newText);
+        props.showAlert("Welcoming the Text ","success");
     }
-    const handleCopy =()=>{
-        var text=document.getElementById("myBox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
+    const handleCopy = () => {
+        var text1=document.getElementById("myBox");
+        text1.select();
+        text1.setSelectionRange(0,9999);
+        navigator.clipboard.writeText(text1.value);
+        props.showAlert("Copy to ClipBoard ","success");
 
     }
-    const extraSpace =()=>{
+    const extraSpace = () => {
         let newText=text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert("Remove Extra spaces ","success");
     }
 
     const[text,setText] = useState("Enter your value here");

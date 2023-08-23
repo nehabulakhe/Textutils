@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar(props){
     let myStyle={
-        backgroundColor: 'black'
+        margin: '0px 20px 0px 50px'
     }
     return(
          
         <div >
-            <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} style={myStyle}>
+            <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
                 <div className="container-fluid">
+                <img style={myStyle} src="favicon-32x32.png"  />
                 <a className="navbar-brand" href="#">{props.title}</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

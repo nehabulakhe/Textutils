@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const About = () => {
+const About = (props) => {
     
     const [myStyle,setMyStyle]=useState({
         color: 'black',
@@ -14,8 +14,8 @@ const About = () => {
         if(myStyle.color === 'black'){
             setMyStyle({
                 color: 'white',
-                backgroundColor: 'black',
-                border: '1px solid white'
+                backgroundColor: 'grey',
+                border: '2px solid black'
             })
             setBtnText("Enable Light Mode")
         }
@@ -30,7 +30,7 @@ const About = () => {
     
     return <div>
     <>
-            <div className="container " style={myStyle}>
+            <div className="containermy my-5" style={{color:props.mode === 'dark'?'white':'#042743'}}>
             <h1>About us</h1>
                 <div className="accordion" id="accordionExample">
                     <div className="accordion-item">

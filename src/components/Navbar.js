@@ -1,4 +1,4 @@
-import React,{useState} from 'react';   
+   
 import { Link } from 'react-router-dom';
 
 
@@ -11,8 +11,8 @@ export default function Navbar(props){
         <div >
             <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
                 <div className="container-fluid">
-                <img style={myStyle} src="favicon-32x32.png"  />
-                <a className="navbar-brand" href="#">{props.title}</a>
+                <img style={myStyle} src="favicon-16x16.png" />
+                <a className="navbar-brand" href="">{props.title}</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
@@ -22,8 +22,9 @@ export default function Navbar(props){
                         <Link className="nav-link active" aria-current="page" to="/">Home</Link> 
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link active" to="/about">About</Link>
+                        <Link className="nav-link active" aria-current="page" to="/about">About</Link> 
                         </li>
+                        
                     </ul>
                     <div className={`form-check form-switch text-${props.mode=== 'light'?'dark':'light'}`}>
                     <input className="form-check-input" type="checkbox" onClick={props.toggleMode} id="flexSwitchCheckDefault" />

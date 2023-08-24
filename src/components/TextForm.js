@@ -32,9 +32,7 @@ export default function TextForm(props){
         props.showAlert("Welcoming the Text ","success");
     }
     const handleCopy = () => {
-        var text1=document.getElementById("myBox");
-        text1.select();
-        navigator.clipboard.writeText(text1.value);
+        navigator.clipboard.writeText(text);
        // document.getSelection.removeAllRanges();
         props.showAlert("Copy to ClipBoard ","success");
 
@@ -62,7 +60,7 @@ export default function TextForm(props){
             <button className="btn btn-primary mx-1 my-1"  disabled={text.length===0} onClick={extraSpace}>Remove Extra Space</button>
             
             <h2 className='mt-4'>Your Summary</h2>
-                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length } characters</p>
+                <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length } characters</p>
                 <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:"Nothing to Preview ... "}</p>

@@ -20,6 +20,8 @@ function App() {
       setAlert(null);
     }, 1600);
   }
+
+  //set dark and white mode
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');
@@ -53,8 +55,8 @@ function App() {
 
 
         </div>
-
       </Main>
+
     </>
 
   );
